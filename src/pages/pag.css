@@ -1,0 +1,278 @@
+/* recruery */
+.title1{
+    display: flex;
+    color: black;
+    font-size: 25px;
+    margin-top: 5px;
+}
+.sub-main{
+    background-color:white;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    display: flex;
+    font-size: 20px;
+    color: #375dce;
+    display: flex;
+}
+.sub-title{
+    display: flex;
+    font-size: 23px;
+    color: black;
+}
+.drop, .select-box{
+    
+    border-radius: 5px;
+    border-color: #375dce;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+.select-box{
+    width: 250px;
+    max-width: 300px;
+    padding: 10px;
+}
+.separator {
+  height: 1px;
+  background-color: #ccc;
+  margin: 10px 0;
+  border-bottom:1px ;
+  border-color: black;
+}
+
+
+/* home */
+
+.boxs{
+    display: flex;
+}
+.first-box{
+    display: flex;
+    flex-direction: column;
+    background-color: #e3e5e5;
+    min-height: 600px;
+    width: 60%;
+    margin:5px;
+    max-height: 100%;
+}
+.second-box{
+    display: flex;
+    flex-direction: column;
+    background-color: #e3e5e5;
+    min-height: 600px;
+    max-height: 100%;
+    width: 40%;
+    margin:5px;
+}
+.first-box-up{
+    
+    background-color: #ffffff;
+    margin: 10px;
+    height: 100px;
+    max-height: 200px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
+.detail-id-name{
+    color: #375dce;
+    display: inline-block;
+    font-size: 22px;
+    padding: 0 5px;
+}
+.detail-doubt-name{
+    background-color: #e3e5e5;
+    max-width: 300px;
+    padding: 3px 4px;
+    margin: 5px;
+    border-radius: 10px;
+    color: rgb(48, 44, 44);
+    
+}
+.box-assign{
+    display: flex;
+    justify-content: flex-end;
+    width: 70px;
+    font-size: 18px;
+    margin: 5px;
+}
+.box-date{
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px;
+}
+
+/* second box */
+
+.detailedbox{
+    background-color: white;
+    margin: 5px;
+    height: 600px;
+    max-height: 1000px;
+    width: 100%;
+    display: flex;  
+}
+.con-detaile{
+    width:100%
+}
+.box-title{
+    color: #375dce;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px ;
+}
+.description2{
+    display: inline-block;
+    padding-top: 10px;
+}
+.assigned2{
+    display: flex;
+    justify-content: end;
+    color: rgb(7, 203, 138);
+}
+.but2{
+    display: flex;
+    justify-content: center;
+}
+.query-btn2{
+    display: flex;
+    color: white;
+    background-color: #375dce;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+}
+.box-created{
+    font-size: 18px;
+    margin: 10px;
+    padding: 10px;
+}
+.box-des{
+    font-size: 18px;
+    margin: 10px;
+    padding: 10px;
+}
+.box-assig{
+    display: flex;
+    justify-content: end;
+    font-size: 18px;
+    margin: 10px;
+    padding: 10px;
+}
+.box-attach{
+    font-size: 18px;
+    margin: 10px;
+    padding: 10px;
+}
+
+/* userform */
+
+.box3{
+    display: flex;
+}
+.first-box3{
+    display: flex;
+    flex-direction: column;
+    background-color: #e3e5e5;
+    height: 700px;
+    width: 50%;
+}
+.second-box3{
+    display: flex;
+    flex-direction: column;
+    background-color: #e3e5e5;
+    height: 700px;
+    width: 50%;
+}
+.description4{
+    padding: 20px 0;  
+    margin: 10px;
+    border-bottom: black;
+    width: auto;
+    color: #000000e7;
+}
+.detailss1{
+    display: flex;
+    margin: 5px;
+    margin-bottom: 15px;
+    justify-content: space-around;
+    padding: 10px;
+    color: #000000e7;
+}
+.detailss2{
+    display: flex;
+    margin: 5px;
+    margin-bottom: 15px;
+    margin-left: 50px;
+    padding: 10px;
+    color: #000000e7;
+}
+.detailss3{
+    display: flex;
+    margin: 5px;
+    margin-bottom: 15px;
+    justify-content: space-around;
+    padding: 10px;
+    color: #000000e7;
+}
+.detailss4{
+    display: flex;
+    margin: 5px;
+    margin-bottom: 15px;
+    justify-content: space-around;
+    padding: 10px;
+    color: #000000e7;
+}
+/* dashboard */
+
+.total{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    margin: 10px;
+}
+.card{
+    margin: 10px;
+}
+.total2{
+    margin-left: 30px;
+    margin-top: 10px;
+    border: 1px;
+    border-style: groove;
+    height: 300px;
+}
+.totaltext{
+    margin: 20px;
+}
+.totaltext1{
+    margin: 25px;
+    font-weight: 300;
+    font-size: 20px;
+}
+/* ---------------navbar------ */
+
+.nav-li1{
+    margin: 5px;
+    margin-right: 15px;
+    color: #375dce;
+}
+.nav-li1:hover{
+    color: Black;
+}
+.nav-li2{
+    margin: 5px;
+    margin-right: 15px;
+    color: #375dce;
+}
+.nav-li2:hover{
+    color: Black;  
+}
