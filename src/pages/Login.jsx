@@ -10,22 +10,21 @@ const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const navigate = useNavigate();
-
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
-    window.localStorage.setItem("isLoggedIn", true);
-    axios.post("http://capstone-ba-pll9.onrender.com/login", { email, password })
-      .then((result) => {
-        console.log(result);
-        if (result.data ==="success") { // Checking for success field
+    localStorage.setItem("isLoggedIn", true);
+    axios.post("http://localhost:5000/login", { email, password })
+      .then((result) => {console.log(result)
+        if (result.data == "success"){ 
           navigate("/");
-          console.log("good")
           window.location.reload();
+          console.log("ert");
         }
       })
       .catch((err) => console.log(err));
   };
-
+  
   return (
     <div className="total-page">
       <div className="total-back">
@@ -48,7 +47,7 @@ const Login = () => {
               ></input>
             </div>
             <div className="button">
-              <button className="login-button">Login</button>
+              <button className="login-button" type="submit">Login</button>
             </div>
             <hr/>
             <div className="but-s">

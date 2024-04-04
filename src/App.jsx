@@ -1,7 +1,7 @@
-import './index.css'
+import './pages/index.css'
 import {BrowserRouter, Route , Routes, useLocation} from 'react-router-dom'
-import Singup from './Singup';
-import Login from './Login';
+import Singup from './pages/Singup';
+import Login from './pages/Login';
 import Userform from './pages/Useform';
 import Recquery from './pages/Recquery'; 
 import Home from './pages/Home';

@@ -4,15 +4,16 @@ import "../pages/pag.css";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const login = window.localStorage.getItem("isLogedIn");
+  const login = localStorage.getItem("isLoggedIn");
   
+
   const Login = () => {
     navigate("/login");
-    window.location.reload();
+    // window.location.reload();
   };
 
   const Logout = () => {
-    window.localStorage.removeItem("isLogedIn");
+    window.localStorage.removeItem("isLoggedIn");
     window.localStorage.removeItem("loginSuccess");
     navigate("/login");
     window.location.reload();

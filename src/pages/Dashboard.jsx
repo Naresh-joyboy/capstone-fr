@@ -6,6 +6,7 @@ import Carousel from 'react-bootstrap/Carousel';
 
 
 function BasicExample({name,text,img,imgnam}) {
+  
     return (
         <div className='cardd'>
       <Card style={{ width: '25rem' , padding: '5px' }}>

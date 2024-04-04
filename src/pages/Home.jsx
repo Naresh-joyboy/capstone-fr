@@ -7,27 +7,22 @@ import { Scrollbars } from 'react-custom-scrollbars-2';
 
 const Home = ({specificdata}) => {
    const[data, setData] = useState([])
-   const login = window.localStorage.getItem("isLogedIn");
+   const login = window.localStorage.getItem("isLoggedIn");
 
   const callApi =async ()=>{
     try{
-        const res = await axios.get('http://capstone-ba-pll9.onrender.com/usersdet');
-        {login?setData(res.data):setData("")}
-        
-      
-        
-     
+        const res = await axios.get('http://localhost:5000/usersdet');
+        {login?setData(res.data):setData("")} 
+        // setData(res.data)    
     }catch(err){
         console.log("There is an error");
     }
   }
 
-
   useEffect(()=>{
     callApi()
   },[])
 
-  
   const navigate = useNavigate();
 
   return (
