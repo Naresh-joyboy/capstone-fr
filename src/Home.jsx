@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "../pages/pag.css";
+import "./pag.css";
 import axios from "axios";
 import {useNavigate} from 'react-router-dom'
 import { Scrollbars } from 'react-custom-scrollbars-2';

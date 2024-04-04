@@ -1,16 +1,16 @@
-import './pages/index.css'
+import './index.css'
 import {BrowserRouter, Route , Routes, useLocation} from 'react-router-dom'
-import Singup from './pages/Singup';
-import Login from './pages/Login';
-import Userform from './pages/Useform';
-import Recquery from './pages/Recquery'; 
-import Home from './pages/Home';
-import Navbar from './pages/Navbar'
-import Dashboard from './pages/Dashboard';
+import Singup from './Singup';
+import Login from './Login';
+import Userform from './Useform';
+import Recquery from './Recquery'; 
+import Home from './Home';
+import Navbar from './Navbar'
+import Dashboard from './Dashboard';
 import './assets/sb-admin-2.min.css'
 import { useEffect, useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Shownavbar from './pages/Shownavbar';
+import Shownavbar from './Shownavbar';
 
 function App() {
 
