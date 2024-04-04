@@ -11,7 +11,7 @@ const Home = ({specificdata}) => {
 
   const callApi =async ()=>{
     try{
-        const res = await axios.get('http://localhost:5000/usersdet');
+        const res = await axios.get('http://capstone-ba.onrender.com/usersdet');
         {login?setData(res.data):setData("")} 
         // setData(res.data)    
     }catch(err){
