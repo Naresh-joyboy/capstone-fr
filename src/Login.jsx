@@ -13,12 +13,13 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    window.localStorage.setItem("isLogedIn", true);
-    axios.post("http://localhost:5000/login", { email, password })
+    window.localStorage.setItem("isLoggedIn", true);
+    axios.post("http://capstone-ba-pll9.onrender.com/login", { email, password })
       .then((result) => {
         console.log(result);
-        if (result.data === "success") {
+        if (result.data ==="success") { // Checking for success field
           navigate("/");
+          console.log("good")
           window.location.reload();
         }
       })
@@ -49,7 +50,7 @@ const Login = () => {
             <div className="button">
               <button className="login-button">Login</button>
             </div>
-            <hr />
+            <hr/>
             <div className="but-s">
               <button className="but-google">
                 <GoogleLogin
@@ -61,7 +62,7 @@ const Login = () => {
                     console.log(credentialResponseDecoded);
                     window.localStorage.setItem("loginSuccess", true);
                     navigate("/");
-                    // window.location.reload();
+                    window.location.reload();
                   }}
                   onError={() => {
                     console.log("Login Failed");

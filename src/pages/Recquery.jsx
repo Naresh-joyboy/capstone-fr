@@ -38,7 +38,7 @@ const Recquery = () => {
     e.preventDefault();
     try {
       await axios.post(
-        "http://localhost:5000/userr",
+        "http://capstone-ba-pll9.onrender.com/userr",
         input
       );
     } catch (err) {
