@@ -19,7 +19,6 @@ const Login = () => {
         if (result.data == "success"){ 
           navigate("/");
           window.location.reload();
-          console.log("ert");
         }
       })
       .catch((err) => console.log(err));
