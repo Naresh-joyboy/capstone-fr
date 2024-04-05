@@ -68,12 +68,12 @@ const Dashboard = () => {
   return (
     <div className='total'>
     <div className='total1'>
-      <BasicExample name="Full Stack Developement" text='React,Node,MySql' img="./src/img/img4.jpg" imgnam="fsd"/>
-      <BasicExample name="Data Analyst" text='Alteryx,Anaconda' img="./src/img/img3.jpeg" imgnam="dss"/>
-      <BasicExample name="Data Science" text='Domo,Tableau,ThoughtSpot' img="./src/img/soo.jpg" imgnam="daa"/>
+      <BasicExample name="Full Stack Developement" text='React,Node,MySql' img="/img/img4.jpg" imgnam="fsd"/>
+      <BasicExample name="Data Analyst" text='Alteryx,Anaconda' img="/img/img3.jpeg" imgnam="dss"/>
+      <BasicExample name="Data Science" text='Domo,Tableau,ThoughtSpot' img="/img/soo.jpg" imgnam="daa"/>
       </div>
       <div className='total2'>
-      <DarkVariantExample img1="./src/img/dev.jpeg" img2="./src/img/uiux.jpg" img3="./src/img/bc.png"/>
+      <DarkVariantExample img1="/img/dev.jpeg" img2="/img/uiux.jpg" img3="/img/bc.png"/>
       <div>
       <h1 className='totaltext'>Description</h1>
       <h4 className='totaltext1'>Fun Class is one of the industry s leading Project Based Career Programs offered by YUVI that promises 100% Job Placement Support on completing the course. Conducted by an IIT kovai incubated company & designed by our Founders(Ex-Paypal Employees) also offers mentoring through experts from companies like Google, Microsoft, Flipkart, Zoho & Freshworks for placing you in top companies with high salaries.</h4>
