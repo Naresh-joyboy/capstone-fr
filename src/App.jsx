@@ -15,10 +15,7 @@ import Shownavbar from './Shownavbar';
 function App() {
 
   const [spechange , setSpeChange] = useState('')
-  // const [loc , setLoc] = useState('')
-
-  // const location =useLocation
-  
+ 
 
   const specificdata =(e)=> {
     const detail =e
@@ -29,15 +26,6 @@ function App() {
    const login = window.localStorage.getItem("isLogedIn");
   const googlelogin = window.localStorage.getItem("loginSuccess");
  
-// useEffect(() => {
-//   const handleLocationChange = () => {
-//     setLoc(window.location.pathname);
-//   };
-
-//   handleLocationChange();
-//   window.addEventListener('popstate', handleLocationChange);
-  
-// }, []);
 
   return (
     <div>
@@ -62,4 +50,4 @@ function App() {
 }
 
 export default App
-  // {loc !== "/register" && loc !== "/home" && <Navbar />}
+  

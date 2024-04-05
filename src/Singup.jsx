@@ -44,7 +44,7 @@ const Singup = () => {
       <hr/>
       <div className='bottom-fp'>
       <Link className='bottom-fp1'>Forget password?</Link><br/>
-      <Link className='bottom-fp2' to={"/login"}>Already have an account</Link>
+      <Link className='bottom-fp2' href={"/login"}>Already have an account</Link>
       </div>
       
     </div>

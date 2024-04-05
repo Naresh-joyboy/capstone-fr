@@ -87,7 +87,7 @@ const Recquery = () => {
     <div className="main">
       <div className="top-div">
         <div style={{ margin: "10px" }}>
-          <Link to="/home" className="btn btn-primary btn-icon-split">
+          <Link href="/home" className="btn btn-primary btn-icon-split">
             <span className="text">Back</span>
           </Link>
           <div className="title1">Create Query</div>
