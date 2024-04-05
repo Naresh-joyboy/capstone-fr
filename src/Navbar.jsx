@@ -16,7 +16,7 @@ const Navbar = () => {
     window.localStorage.removeItem("isLoggedIn");
     window.localStorage.removeItem("loginSuccess");
     navigate("/login");
-    window.location.reload();
+    // window.location.reload();
   };
 
   return (
