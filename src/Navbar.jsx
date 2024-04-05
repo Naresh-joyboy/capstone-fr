@@ -35,15 +35,15 @@ const Navbar = () => {
 
         <ul className="navbar-nav ml-auto">
           <li className="nav-li1">
-            <Link href={"/"}>Home</Link>
+            <Link to={"/"}>Home</Link>
           </li>
 
           <li className="nav-li1">
-            <Link href={"/home"}>Query</Link>
+            <Link to={"/home"}>Query</Link>
           </li>
 
           <li className="nav-li2">
-            <Link href={"/recquery"}>Add Query</Link>
+            <Link to={"/recquery"}>Add Query</Link>
           </li>
 
           <div className="topbar-divider d-none d-sm-block"></div>

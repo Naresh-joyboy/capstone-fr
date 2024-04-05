@@ -28,7 +28,7 @@ const Home = ({specificdata}) => {
   return (
     <div>
       <div style={{ margin: "10px" }}>
-        <Link href="/recquery" className="btn btn-primary btn-icon-split">
+        <Link to="/recquery" className="btn btn-primary btn-icon-split">
           <span className="icon text-white-50">
             <i style={{ fontWeight: "700", fontSize: "20px" }}>+</i>
           </span>

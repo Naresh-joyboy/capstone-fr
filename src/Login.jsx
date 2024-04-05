@@ -73,7 +73,7 @@ const Login = () => {
           <div className="bottom-fp">
             <Link className="bottom-fp1">Forget password?</Link>
             <br />
-            <Link className="bottom-fp2" href={"/register"}>
+            <Link className="bottom-fp2" to={"/register"}>
               Create an account
             </Link>
           </div>
