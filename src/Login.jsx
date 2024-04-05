@@ -18,7 +18,7 @@ const Login = () => {
       .then((result) => {console.log(result)
         if (result.data == "success"){ 
           navigate("/");
-          window.location.reload();
+          // window.location.reload();
         }
       })
       .catch((err) => console.log(err));
@@ -60,7 +60,7 @@ const Login = () => {
                     console.log(credentialResponseDecoded);
                     window.localStorage.setItem("loginSuccess", true);
                     navigate("/");
-                    window.location.reload();
+                    // window.location.reload();
                   }}
                   onError={() => {
                     console.log("Login Failed");
