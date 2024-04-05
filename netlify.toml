@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/subpath/*"
+  to = "/index.html"
+  status = 200
