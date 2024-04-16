@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
 import axios from "axios";
@@ -9,11 +9,13 @@ import { jwtDecode } from "jwt-decode";
 const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [det , setDet] = useState()
   const navigate = useNavigate();
  
   const handleSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem("isLoggedIn", true);
+    localStorage.setItem("loginSuccess",true)
     axios.post("https://capstone-ba.onrender.com/login", { email, password })
       .then((result) => {console.log(result)
         if (result.data == "success"){ 
@@ -23,7 +25,18 @@ const Login = () => {
       })
       .catch((err) => console.log(err));
   };
-  
+
+   
+ useEffect (()=>{ 
+  if(det === true){
+    
+    localStorage.setItem("isLoggedIn", true);
+    localStorage.setItem("loginSuccess",true)
+    navigate('/')
+  }
+ },[det])
+
+
   return (
     <div className="total-page">
       <div className="total-back">
@@ -56,16 +69,21 @@ const Login = () => {
                     const credentialResponseDecoded = jwtDecode(
                       credentialResponse.credential
                     );
+                    
                     console.log("login success");
-                    console.log(credentialResponseDecoded);
-                    window.localStorage.setItem("loginSuccess", true);
-                    navigate("/");
+                    
+                    setDet(credentialResponseDecoded.
+                      email_verified)
+                      
                     // window.location.reload();
                   }}
-                  onError={() => {
-                    console.log("Login Failed");
+                  onError={(err) => {
+                    console.log(err,"Login Failed");
                   }}
-                />{" "}
+                  
+                />
+                
+                {""}
               </button>
             </div>
           </form>

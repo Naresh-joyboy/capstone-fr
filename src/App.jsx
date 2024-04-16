@@ -38,9 +38,10 @@ function App() {
     <Routes>
     <Route path="/register" element={<Singup/>}/>
     <Route path="/login" element={<Login/>}/>
+    <Route path="/" element={<Dashboard/>}/>
+    
     <Route path="/useform" element={<Userform spechange={spechange}/>}/>
     <Route path="/recquery" element={ <Recquery/>}/>
-    <Route path="/" element={<Dashboard/>}/>
     <Route path="/home" element={<Home specificdata={specificdata}/>}/>
     </Routes>
     

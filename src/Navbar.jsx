@@ -4,8 +4,8 @@ import "./pag.css";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const login = localStorage.getItem("isLoggedIn");
-  
+  const login = localStorage.getItem("isLoggedIn") === "true";
+  const loged = localStorage.getItem("loginSuccess") === "true";
 
   const Login = () => {
     navigate("/login");
@@ -13,8 +13,9 @@ const Navbar = () => {
   };
 
   const Logout = () => {
-    window.localStorage.removeItem("isLoggedIn");
-    window.localStorage.removeItem("loginSuccess");
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("loginSuccess");
+    localStorage.clear()
     navigate("/login");
     // window.location.reload();
   };
@@ -37,17 +38,22 @@ const Navbar = () => {
           <li className="nav-li1">
             <Link to="/">Home</Link>
           </li>
-
-          <li className="nav-li1">
+          { loged &&
+          
+            (<>
+              <li className="nav-li1">
             <Link to="/home">Query</Link>
           </li>
 
           <li className="nav-li2">
             <Link to="/recquery">Add Query</Link>
           </li>
+          </>
+        )}
+          
 
           <div className="topbar-divider d-none d-sm-block"></div>
-          {login ? (
+          { loged ? (
             <button
               style={{
                 padding: "5px",
