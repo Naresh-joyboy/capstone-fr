@@ -5,6 +5,9 @@
     font-size: 25px;
     margin-top: 5px;
 }
+.errorform{
+    color: red;
+}
 .sub-main{
     background-color:white;
     display: flex;

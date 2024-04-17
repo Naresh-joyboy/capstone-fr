@@ -7,23 +7,34 @@ import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
 
 const Login = () => {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [det , setDet] = useState()
+  const [error, setError] = useState({})
   const navigate = useNavigate();
  
   const handleSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem("isLoggedIn", true);
+    const validation = {}
+    if(!email.trim()){
+      validation.email = "email is required"
+    }
+    if(!password.trim()){
+      validation.password = "password is required"
+    }
+    setError(validation)
+    if(Object.keys(validation).length === 0){
+      localStorage.setItem("isLoggedIn", true);
     localStorage.setItem("loginSuccess",true)
     axios.post("https://capstone-ba.onrender.com/login", { email, password })
       .then((result) => {console.log(result)
         if (result.data == "success"){ 
           navigate("/");
-          // window.location.reload();
         }
       })
       .catch((err) => console.log(err));
+    }
+    
   };
 
    
@@ -48,7 +59,8 @@ const Login = () => {
                 className="input-mail"
                 placeholder="Enter E-mail Address"
                 onChange={(e) => setEmail(e.target.value)}
-              ></input>
+              ></input><br/>
+              {error.email && <span className="errorform">{error.email}</span>}
             </div>
             <div className="input2">
               <input
@@ -56,7 +68,8 @@ const Login = () => {
                 placeholder="password"
                 type="password"
                 onChange={(e) => setPassword(e.target.value)}
-              ></input>
+              ></input><br/>
+              {error.password && <span className="errorform">{error.password}</span>}
             </div>
             <div className="button">
               <button className="login-button" type="submit">Login</button>
@@ -69,9 +82,6 @@ const Login = () => {
                     const credentialResponseDecoded = jwtDecode(
                       credentialResponse.credential
                     );
-                    
-                    console.log("login success");
-                    
                     setDet(credentialResponseDecoded.
                       email_verified)
                       
@@ -82,8 +92,6 @@ const Login = () => {
                   }}
                   
                 />
-                
-                {""}
               </button>
             </div>
           </form>

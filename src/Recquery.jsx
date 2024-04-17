@@ -7,9 +7,10 @@ import { useNavigate } from "react-router-dom";
 
 const Recquery = () => {
   const navigate = useNavigate();
-
+  const [error, setError] = useState({})
   const dateandtime = moment().format("MMMM Do YYYY, h:mm:ss a");
- const [img, setImg] = useState('')
+  const login = localStorage.getItem("isLoggedIn")
+
   const [input, setInput] = useState({
     category: "",
     voiceLanguage: "",
@@ -17,7 +18,6 @@ const Recquery = () => {
     quDescription: "",
     startTime: "",
     endTime: "",
-    attachment: "",
     subcategory: "",
     date: dateandtime
   });
@@ -29,23 +29,49 @@ const Recquery = () => {
     });
   };
 
-  const handleimage = (e) => {
-    setImg(e.target.files[0].name);
-  };
-  console.log(input.attachment);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      await axios.post(
-        "https://capstone-ba.onrender.com/userr",
-        input
-      );
-    } catch (err) {
-      console.log("there is an error");
-    }
-    setInput("");
-    navigate("/home");
+    const validationErr = {}
+    
+      if(!input.category.trim()){
+        validationErr.category ="category is required"
+      }
+      if(!input.voiceLanguage.trim()){
+        validationErr.voiceLanguage ="voiceLanguage is required"
+      }
+      if(!input.queTitle.trim()){
+        validationErr.queTitle ="queTitle is required"
+      }
+      if(!input.quDescription.trim()){
+        validationErr.quDescription ="quDescription is required"
+      }
+      if(!input.startTime.trim()){
+        validationErr.startTime ="startTime is required"
+      }
+      if(!input.endTime.trim()){
+        validationErr.endTime ="endTime is required"
+      }
+      if(!input.subcategory.trim()){
+        validationErr.subcategory ="subcategory is required"
+      }
+      setError(validationErr)
+      if(Object.keys(validationErr).length === 0){
+        alert("Form is completed") 
+        try {
+          await axios.post(
+            "https://capstone-ba.onrender.com/userr",
+            input
+          );
+        
+        } catch (err) {
+          console.log("there is an error");
+        }
+        setInput("");
+        navigate("/home");
+      }
+      
   };
 
   const file = [
@@ -112,7 +138,8 @@ const Recquery = () => {
                   Coordination related
                 </option>
                 <option value="Pre-bootcamp">Pre-bootcamp</option>
-              </select>
+              </select><br/>
+              {error.category && <span className="errorform">{error.category}</span>}
             </div>
           </div>
           {file.map((data,index) =>
@@ -133,7 +160,8 @@ const Recquery = () => {
                     <option value={data.four}>{data.four}</option>
                     <option value={data.five}>{data.five}</option>
                     <option value={data.six}>{data.six}</option>
-                  </select>
+                  </select><br/>
+                  {error.subcategory && <span className="errorform">{error.subcategory}</span>}
                 </div>
               </div>
             ) : (
@@ -155,7 +183,8 @@ const Recquery = () => {
               <option value="Tamil">Tamil</option>
               <option value="English">English</option>
               <option value="Hindi">Hindi</option>
-            </select>
+            </select><br/>
+            {error.voiceLanguage && <span className="errorform">{error.voiceLanguage}</span>}
           </div>
         </div>
         <hr />
@@ -168,7 +197,8 @@ const Recquery = () => {
             name="queTitle"
             placeholder="Enter query title"
             onChange={handlechange}
-          />
+          /><br/>
+          {error.queTitle && <span className="errorform">{error.queTitle}</span>}
         </div>
         <div>
           <h4 className="sub-title">Query Description</h4>
@@ -178,7 +208,8 @@ const Recquery = () => {
             name="quDescription"
             placeholder="Enter Description"
             onChange={handlechange}
-          />
+          /><br/>
+          {error.quDescription && <span className="errorform">{error.quDescription}</span>}
         </div>
         <hr />
 
@@ -192,7 +223,8 @@ const Recquery = () => {
             required
             max="19:00"
             onChange={handlechange}
-          />
+          /><br/>
+          {error.startTime && <span className="errorform">{error.startTime}</span>}
         </div>
         <div>
           <h4 className="sub-title">To</h4>
@@ -203,22 +235,10 @@ const Recquery = () => {
             required
             max="19:00"
             onChange={handlechange}
-          />
+          /><br/>
+          {error.endTime && <span className="errorform">{error.endTime}</span>}
         </div>
         <hr />
-        <div>
-          <h4 className="title">Attachment</h4>
-          <div class="d-flex">
-            <div className="attachments__body">
-              <input
-                type="file"
-                className="add__attachment"
-                name="attachment"
-                onChange={handleimage}
-              ></input>
-            </div>
-          </div>
-        </div>
         <div className="d-flex justify-content-end">
           <Link to="/">
             <button
@@ -235,7 +255,7 @@ const Recquery = () => {
             </button>
           </Link>
           <div className="lastBtns">
-            <button
+            {login?<button
               type="submit"
               class="btn submit-btn"
               disabled=""
@@ -248,11 +268,11 @@ const Recquery = () => {
               }}
             >
               Create
-            </button>
+            </button>:<button>Create</button>}
           </div>
         </div>
       </div>
-      <div>{img}</div>
+      
     </div>
   );
 };
