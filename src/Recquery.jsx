@@ -257,7 +257,7 @@ const Recquery = () => {
           <div className="lastBtns">
             {login?<button
               type="submit"
-              class="btn submit-btn"
+              className="btn submit-btn"
               disabled=""
               onClick={handleSubmit}
               style={{
@@ -268,7 +268,7 @@ const Recquery = () => {
               }}
             >
               Create
-            </button>:<button>Create</button>}
+            </button>:<button className="btn submit-btn">Create</button>}
           </div>
         </div>
       </div>
