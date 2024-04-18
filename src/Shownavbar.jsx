@@ -14,6 +14,7 @@ const Shownavbar = ({children}) => {
             setShowNav(false)
         }else{
             setShowNav(true)
+            console.log("true");
         }
     },[location])
   return (
