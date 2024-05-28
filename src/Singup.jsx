@@ -27,10 +27,13 @@ const Singup = () => {
     setError(validation)
     if(Object.keys(validation).length === 0){
      await axios.post('https://capstone-ba.onrender.com/register',{name,email,password})
-    .then(result => {console.log(result,"hi")
+    .then(result => {
+      if(result){
       navigate('/login')
-      console.log("some");
       window.location.reload()
+      }else{
+        console.log("posted");
+      }
     })
     .catch(err => console.log(err,"post error"))
   }

@@ -27,7 +27,7 @@ const Login = () => {
       localStorage.setItem("isLoggedIn", true);
     localStorage.setItem("loginSuccess",true)
     axios.post("https://capstone-ba.onrender.com/login", { email, password })
-      .then((result) => {console.log(result)
+      .then((result) => {
         if (result.data == "success"){ 
           navigate("/");
         }
